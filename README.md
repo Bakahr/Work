@@ -1,2 +1,2 @@
 # Work
-Collection of scripts, powershell one-liners and more.
+Collection of Powershell scripts, automation tools and more.
