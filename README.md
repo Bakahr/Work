@@ -6,7 +6,7 @@ Collection of Powershell scripts, automation tools and more.
 
 
 
-FixUserSHellFolderPermissions.ps1  solves all the problems in one go without need for Elevated Privileges, use it first before manually running the 3 other scripts..
+FixUserSHellFolderPermissions.ps1  solves all the problems related to ClickShare/MSUpdate etc. in one go without need for Elevated Privileges, use it first before manually running the 3 other scripts..
 _________________________________________________________________________________________________________________________________________________________________________
 This helper Diagnostic script from Microsoft Support is aimed to fix corrupt registry permissions of HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
 
