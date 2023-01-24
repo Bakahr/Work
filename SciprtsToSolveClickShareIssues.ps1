@@ -23,11 +23,11 @@ try
     $acl |Set-Acl
 } catch { }
 
+# Before running these two scripts, open two powershell windows, one with Elevated Privileges and one without.
+# Then open Task Manager and kill explorer.exe  script #2 will start the Process again after it's done.
 
-# Run  in Powershell as Admin
+# Run the following in Powershell as Admin (Elevated Privileges)
 Get-AppXPackage -AllUsers | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-
-
 
 # Run this in Powershell, ignore the warnings if you get any.
 Get-AppXPackage | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "C:\Windows\SystemApps\Microsoft.Windows.Search_cw5n1h2txyewy\AppXManifest.xml"}
