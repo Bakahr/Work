@@ -39,6 +39,9 @@ if (-not (Get-AppxPackage Microsoft.Windows.CloudExperienceHost)) { Add-AppxPack
 Start-Process explorer.exe
 
 
+# If you by any chance have disalbed Modern Authentication for your M365 deployments, then run the following script and never disable it again
+# Disabling it will create more problems than it solves when you use SSO, Authenticator ETC.
+
 # REMOVE SHITTY  REGEDIT HACK.
 Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\Common\Identity" -Name "EnableADAL"
 Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Office\16.0\Common\Identity" -Name "DisableAADWAM"
