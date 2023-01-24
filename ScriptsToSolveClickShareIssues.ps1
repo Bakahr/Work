@@ -1,4 +1,5 @@
-#Run this script first to validate permissions om the registry entries that has "All Application Packages" with "Read" as checked.
+# Run this script first to validate permissions om the registry entries that has "All Application Packages" with "Read" as checked.
+# This part of the script will fix the issue with the start menu not working. 
 $idRef = [System.Security.Principal.SecurityIdentifier]("AC")   
 $access = [System.Security.AccessControl.RegistryRights]"ReadKey"
 $inheritance = [System.Security.AccessControl.InheritanceFlags]"ContainerInherit,ObjectInherit"
