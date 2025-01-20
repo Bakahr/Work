@@ -1,13 +1,13 @@
 #Printer & Driver Reset Tool
 
-# This script deletes all network printers and their drivers, then re-install the printers while retaining the default printer.
-# the list of printers is backed up to C:\Temp\PrinterList.txt for reference in case of any issues. 
+# This script deletes all network printers and their drivers, then re-installs them while retaining the default printer.
+# The list of printers is backed up to C:\Temp\PrinterList.txt for reference in case of any issues. 
 
 #  Must be run as local admin.  Run from Windows Terminal or PowerShell ISE as Administrator.
 
 #  This script is provided as-is with no warranty or support.  Use at your own risk.
 
-# this script only works for windows 10 / 11 and properly 8/8.1.  It will not work for windows 7 or earlier.
+# This script only works for Windows 10 / 11 and probably 8/8.1.  It will not work for Windows 7 or earlier.
 
 #  This script is based on the following article: https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-tool-to-reset-printer-drivers-in-windows-10/
 # The location for the prndrvr.vbs script, which is used to manipulate the printer drivers, it's in a different location depending on the OS version.
@@ -19,7 +19,7 @@ $ComputerOSVersion = Get-WmiObject -Class Win32_OperatingSystem | Select-Object 
 $PrinterList = @()
 $DriverList = @()
 
-# Output path to text file
+# Output path to a text file
 $Path = "C:\Temp\"
 
 # Create the directory if the path doesn't exist
@@ -30,7 +30,7 @@ if (!(Test-Path $Path)) {
 # Determine Default Printer
 $DefaultPrinter = Get-DefaultPrinter | Where-Object {$_.Default -eq $true }
 
-# Get list of network Printers
+# Get the list of network Printers
 $NetworkPrinters = Get-Printer -ConnectionName * -ErrorAction SilentlyContinue | Select-Object Name, DriverName, PortName, ConnectionName | Sort-Object Name | Where-Object {$_.ConnectionName -eq $true}
 
 # Loop through the list of network printers and add them to the array
