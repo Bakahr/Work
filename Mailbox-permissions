@@ -1,0 +1,6 @@
+
+
+Add-MailboxFolderPermission -Identity xx@example.com\Kalender -User xx
+
+Set-MailboxFolderPermission -Identity xx@example.com\Kalender -User xx
+
